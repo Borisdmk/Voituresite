@@ -1,0 +1,461 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/Roboto/Roboto-Regular.ttf"); /* safari, Android, Ios, Microsoft  */
+    /* url("../fonts/Roboto/Roboto-Black.woff") format("woff") // assez moderne,
+    url("../fonts/Roboto/Roboto-Black.ttf") format("ttf"),
+    url("../fonts/Roboto/Roboto-Black.woff2") format("woff2"); // browser super modern 
+    url("../fonts/Roboto/Roboto-Black.woff2") format("svg"); // IOS */
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/Roboto/Roboto-Italic.ttf"); /* safari, Android, Ios, Microsoft  */
+    /* url("../fonts/Roboto/Roboto-Black.woff") format("woff") // assez moderne,
+    url("../fonts/Roboto/Roboto-Black.ttf") format("ttf"),
+    url("../fonts/Roboto/Roboto-Black.woff2") format("woff2"); // browser super modern 
+    url("../fonts/Roboto/Roboto-Black.woff2") format("svg"); // IOS */
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf"); /* safari, Android, Ios, Microsoft  */
+    /* url("../fonts/Roboto/Roboto-Black.woff") format("woff") // assez moderne,
+    url("../fonts/Roboto/Roboto-Black.ttf") format("ttf"),
+    url("../fonts/Roboto/Roboto-Black.woff2") format("woff2"); // browser super modern 
+    url("../fonts/Roboto/Roboto-Black.woff2") format("svg"); // IOS */
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/Roboto/Roboto-BoldItalic.ttf"); /* safari, Android, Ios, Microsoft  */
+    /* url("../fonts/Roboto/Roboto-Black.woff") format("woff") // assez moderne,
+    url("../fonts/Roboto/Roboto-Black.ttf") format("ttf"),
+    url("../fonts/Roboto/Roboto-Black.woff2") format("woff2"); // browser super modern 
+    url("../fonts/Roboto/Roboto-Black.woff2") format("svg"); // IOS */
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+/* reset */
+
+*{
+    font-family: "roboto", "sans-serif";
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* 
+
+////// classes communes
+
+*/
+
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+
+/* colors */
+
+.text-white {
+    color: white;
+}
+
+/* alignement */
+
+.text-center {
+    text-align: center;
+}
+
+/* padding */
+
+.p2 {
+    padding: 2rem;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* 
+
+//////// HEADER
+
+view width : 60vh : l'élément fait 60% de la largeur de la page
+view height : 60vw : l'élément fait 60% de la hauteur de la page
+
+*/
+
+header {
+    height: 600px;
+    width: 100%;
+    border: 1px solid black;
+    background: url("../img/background.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-position-y : -151px;
+}
+
+h1 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+#menu-burger {
+
+    height: 30px;
+    width: 30px;
+    border-radius: 3px;
+    border: 1px solid rgba(255,255,255, 0.6);
+    padding: 0.5rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#menu-burger span {
+
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255,255,255, 0.6);;
+
+}
+
+form {
+    margin-bottom: 2rem;
+    width: 60%;
+}
+
+#pickup-part {
+    width: 80%;
+    padding: 0.5rem;
+    background-color: rgba(189, 195, 199, 0.6);
+}
+
+#pickup-part input[type="date"]:nth-of-type(1) {
+    margin: 0 2rem;
+}
+
+#pickup-part input[type="date"]:nth-of-type(2) {
+    margin-right: 2rem;
+}
+
+form input[type="submit"] {
+    width: 20%;
+    padding: 0.5rem 2rem;
+    color: white;
+    background-color: rgba(70, 157, 70, 0.6);
+    border: 0;
+}
+
+form input[type="date"],
+form select{
+    flex: 1;
+    padding: 0.8rem 0 0.8rem 1rem;
+    border: 0;
+    color: rgb(45, 52, 54);
+}
+
+form select,
+section select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 100%;
+}
+
+input[type="date"]::before {
+    content:attr(placeholder);
+    width: 100%;
+}
+
+input[type="date"] {
+    position: relative;
+}
+
+input[type="date"]::after {
+    font-family: 'FontAwesome';
+    content: '\f073';
+    color: black;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    background-color: rgba(189, 195, 199, 0.6);
+    padding: 2.5rem 0.6rem 0.6rem 0.6rem;
+}
+
+/* faire disapraitre l'ancien calendrier */
+input[type='date']::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+
+/* 
+
+    SECTION VOITURES
+
+
+*/
+
+section .container {
+    width: 60%;
+}
+
+section p span {
+
+    font-size: 2rem;
+
+}
+
+section select {
+    padding: 0.8rem 1rem;
+    color: rgb(45, 52, 54);
+    background-color: rgba(240, 242, 243, 0.6);
+    border: 1px solid rgba(189, 195, 199, 0.6);
+    border-radius: 0.5rem;
+}
+
+.vehicule {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(127, 140, 141, 0.2);
+}
+
+.vehicule-img-container {
+    position: relative;
+}
+
+.vehicule-img-container::before ,
+.vehicule-img-container::after {
+    content: "";
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-right: 10px solid black;
+    position: absolute;
+    top: 50%;
+}
+
+.vehicule-img-container::before {
+    left: -10px;
+}
+
+.vehicule-img-container::after {
+    rotate: 180deg;
+}
+
+.vehicule-details p:first-of-type {
+    margin: 1rem 0;
+}
+
+.vehicule-details + a {
+    background-color: rgba(70, 157, 70, 1);
+    padding: 0.7rem;
+    margin-top: 1rem;
+    border-radius: 0.3rem;
+    border: 0.4mm ridge rgba(0,0,0,0.6);
+    color: white;
+}
+
+
+/* FOOTER */
+
+
+footer img {
+    height: 100px;
+    margin-right: 2rem;
+}
+
+
+/* 
+
+    ///////
+    ////// RESPONSIVE
+    ///////
+
+
+*/
+
+/* MEDIA QUERY */
+
+/* le css ci-dessous ne s'appliquera que pour les tout petits écrans (phones) */
+@media only screen and (max-width:600px) {
+
+
+    #pickup-part input, #pickup-part select {
+        width: 100%;
+        flex: none;
+        margin: 0 !important;
+    }
+
+    #pickup-part input:first-of-type {
+        margin: 0.5rem 0 !important;
+    }
+
+    section .container div:first-of-type {
+        align-items: start;
+    }
+
+    section .container div:first-of-type select {
+        margin-top: 2rem;
+    }
+
+    /* .vehicule-details {
+        display: none;
+    } */
+
+}
+
+/* le css s'appliquer pour tous les écrans faisant au moins 600px (tablettes et +) */
+@media only screen and (min-width:600px) {
+
+
+}
+
+
+/* les petits écrans : tablettes et téléphones */
+@media only screen and (max-width:767px) {
+
+
+    /*  les selecteurs ont un poids, plus vous allez utiliser de sélecteurs
+        plus la selection va avoir un poids et écraser le style si vous utiliser une partie du selecteur ailleurs
+
+        un id : 10 points
+        une classe : 5 poids
+
+        section .container => 15 points
+        .container => 5 points
+    */  
+
+    /* première solution */
+
+    /* section div.container {
+        width: 100%;
+    } */
+
+    header {
+        background-position-y: 0;
+    }
+
+    .container {
+        width: 100% !important; 
+    }
+
+}
+
+/* smartphones et tablettes paysage */
+@media only screen and (max-width:991px) {
+
+
+    form, #pickup-part {
+        flex-wrap: wrap;
+    }
+
+    #pickup-part, form input[type="submit"] {
+        width:100%;
+    }
+
+    #pickup-part input[type="date"]:nth-of-type(2){
+        margin-right: 0 !important;
+    }
+
+    header {
+        background-position-y: 0px;
+    }
+
+}
+
+/* tablettes en mode paysage */
+@media only screen and (min-width:768px) and (max-width:992px) {
+
+
+
+}
+
+/* écran d'ordinateur de bureau */
+
+@media only screen and (min-width:992px) {
+
+
+}
+
+/* écran d'ordinateur de bureau très grand */
+
+@media only screen and (min-width:1200px) {
+
+
+}
+
+/* MENU BURGER HOVER */
+
+nav .dropdown {
+    width: 100vw;
+    background: white;
+    position: absolute;
+    margin-top: 4rem;
+    display: none;
+}
+
+nav .dropdown li {
+    padding: 0.5rem 2rem;
+}
+
+nav:hover .dropdown {
+    display: block;
+}
